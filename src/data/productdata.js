@@ -5,6 +5,7 @@ const products =[
         price:11.56,
         rating:5,
         image:"https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg",
+        amount:1,
     },
     {
         id:"49538090",
@@ -12,6 +13,7 @@ const products =[
         price:12.89,
         rating:5,
         image:"https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg",
+        amount:1,
     },
     {
         id:"49538091",
@@ -19,6 +21,7 @@ const products =[
         price:12.89,
         rating:4,
         image:"https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg",
+        amount:1,
     },
     {
         id:"12321342",
@@ -26,6 +29,7 @@ const products =[
         price:11.56,
         rating:5,
         image:"https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$",
+        amount:1,
     },
     {
         id:"49538093",
@@ -33,6 +37,7 @@ const products =[
         price:12.89,
         rating:3,
         image:"https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg",
+        amount:1,
     },
     {
         id:"49538095",
@@ -40,6 +45,7 @@ const products =[
         price:12.89,
         rating:5,
         image:"https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg",
+        amount:1,
     },
     {
         id:"59538093",
@@ -47,6 +53,7 @@ const products =[
         price:12.89,
         rating:3,
         image:"https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg",
+        amount:1,
     },
     {
         id:"59538095",
@@ -54,6 +61,7 @@ const products =[
         price:12.89,
         rating:2,
         image:"https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg",
+        amount:1,
     },
 ];
 export default products;

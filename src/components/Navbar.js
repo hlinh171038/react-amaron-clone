@@ -4,8 +4,10 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import '../App.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from  'react-router-dom'
+import { useGlobalContext } from '../context';
 
 function Navbar() {
+  const {state} = useGlobalContext();
   return (
     <div className='navs__container'>
       <div className='navs'>
@@ -32,6 +34,7 @@ function Navbar() {
         <Link to='/checkout'>
           <AddShoppingCartIcon />
         </Link>
+        <p className='nav__carts__amount'>{state.total}</p>
       </div>
     </div>
     <div className='main__navs'>
