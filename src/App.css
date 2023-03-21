@@ -48,6 +48,8 @@
   width: 100%;
   padding: 0.5rem;
   cursor: pointer;
+  border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 .search__icon{
   background-color:var(--main-bnt-color) ;
@@ -88,7 +90,7 @@
 }
 .nav__carts__amount{
   font-family: sans-serif;
-  font-size:x-large
+  font-size:x-large;
 }
 .main__navs{
   display: flex;
@@ -305,4 +307,98 @@
   padding: .5rem 2rem;
   border:none;
   cursor: pointer;
+}
+/*---------------------------------------------------------login-page-------------------------------------------------------*/
+.login {
+  background-color: var(--color-white);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-family);
+}
+
+.login__logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.login__container {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid var(--main-color-lighter);
+  padding: 20px;
+}
+
+.login__container > h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.login__container > form > h5 {
+  margin-bottom: 5px;
+}
+
+.login__container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: var(--color-white);
+  width: 98%;
+}
+
+.login__container > p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.login__signInButton {
+  background: var(--main-bnt-color);
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: var(--main-bnt-color);
+  cursor: pointer;
+
+}
+
+.login__registerButton {
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: darkgray;
+  cursor: pointer;
+}
+.error{
+  background-color: var(--main-bnt-color);
+  color:white;
+  padding: 1rem;
+  border-radius:.2rem;
+  text-transform: capitalize;
+}
+.message{
+  background-color: green;
+  color:white;
+  padding: 1rem;
+  border-radius:.2rem;
+  text-transform: capitalize;
+}
+.btn__logout{
+  background-color: var(--main-bnt-color);
+  padding:  0.2rem 1rem;
+  border-radius: 0.5rem;
+}
+.btn__logout>a{
+  color:white;
+  text-decoration: none;
 }

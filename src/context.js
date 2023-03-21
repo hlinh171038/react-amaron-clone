@@ -2,6 +2,7 @@ import React,{useContext,useState,useReducer,useEffect} from 'react';
 import slidedata from './data/slidedata'
 import productdata from './data/productdata'
 import reducer from './reducer'
+import {auth} from './firebase'
 
 const AppContext = React.createContext()
 const initialState = {
@@ -13,8 +14,10 @@ const initialState = {
 const AppProvider = ({children})=>{
     const [slides,setSlides] = useState(slidedata);
     const [state,dispatch] =useReducer(reducer,initialState)
+    //-----sign----
+    const [currentUser,setCurrentUser] = useState('')
 
-
+// check out ------------------------------------------------------pages---------------
     const handleOpenCheckout =(id) =>{
         if(state.checkoutArr.length >0){
             state.checkoutArr.forEach(item =>{
@@ -67,6 +70,31 @@ const AppProvider = ({children})=>{
         dispatch({type:"GET_TOTALS"});
         dispatch({type:"GET__PRICE"});
     },[state.checkoutArr])
+
+    //----------------------------------------------------------------signin-sign up pages----------------------
+    const signup = (email,password)=>{
+       return auth.createUserWithEmailAndPassword(email,password)
+    }
+
+    const login = (email,password) =>{
+        return auth.signInWithEmailAndPassword(email,password);
+    }
+
+    const logout = ()=>{
+        return auth.signOut();
+    }
+
+    const resetPassword = (email)=>{
+        return auth.sendPasswordResetEmail(email)
+    }
+    // take state user
+    useEffect(()=>{
+        const unsubcribe = auth.onAuthStateChanged(user=>{
+                            setCurrentUser(user)
+                        })
+        return unsubcribe
+    })
+
     return <AppContext.Provider 
             value ={{
                 slides,
@@ -75,7 +103,12 @@ const AppProvider = ({children})=>{
                 handleIncrese,
                 handleDecrese,
                 handleDelete,
-                handleRemoveAll
+                handleRemoveAll,
+                currentUser,
+                signup,
+                login,
+                logout,
+                resetPassword
             }}
         >{children}</AppContext.Provider>
 }

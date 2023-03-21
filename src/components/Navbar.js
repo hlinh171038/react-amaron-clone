@@ -1,13 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import '../App.css'
 import MenuIcon from '@mui/icons-material/Menu';
-import {Link} from  'react-router-dom'
+import {Link,useNavigate} from  'react-router-dom'
 import { useGlobalContext } from '../context';
 
 function Navbar() {
-  const {state} = useGlobalContext();
+  const {state,currentUser,logout} = useGlobalContext();
+  const [error,setError] = useState('')
+  const [loading,setLoading] = useState(false)
+  const navigate = useNavigate()
+  const handleLogOut = async(e)=>{
+    e.preventDefault()
+    try {
+      setLoading(true)
+      setError('')
+      await logout()
+      navigate('/login')
+    } catch (error) {
+      setError('log out faill')
+    }
+    setLoading(false)
+  }
   return (
     <div className='navs__container'>
       <div className='navs'>
@@ -23,8 +38,8 @@ function Navbar() {
         </form>
       </div>
       <div class='nav__logins'>
-        <span className="login__lineone">hello,sign in</span>
-        <span className='login__linetwo'>Account&List</span>
+        <span className="login__lineone">hello,{currentUser ? currentUser.email :"sign in"}</span>
+        <span className='login__linetwo'>{currentUser? <button className='btn__logout' onClick={handleLogOut}><Link to='/login'>Log out</Link></button>: 'Account&List'}</span>
       </div>
       <div className='nav__returns'>
         <span className='return__lineone'>returns</span>
