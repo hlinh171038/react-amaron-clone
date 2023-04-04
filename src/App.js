@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout'
 import Login from './pages/Login'
 import Error from './pages/Error'
 import SignUp from './pages/SignUp'
+import PayMent from './pages/PayMent'
 // components
 import Navbar from './components/Navbar'
 import ResetPassword from './pages/ResetPassword'
@@ -25,6 +26,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/reset-password' element={<ResetPassword/>}/>
+        <Route path="/payment" element={<PayMent/>}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
     </div>

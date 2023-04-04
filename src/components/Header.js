@@ -7,7 +7,7 @@ import Products from './Products'
 
 
 function Header() {
-  const {slides} = useGlobalContext()
+  const {slides,closeSubmenu} = useGlobalContext()
   let [index,setIndex] = useState(0)
   console.log(slides.length -1)
 
@@ -36,8 +36,11 @@ function Header() {
       return index;
     });
   }
+  const handleCloseSubMenu =()=>{
+    closeSubmenu()
+  }
   return (
-    <div className='headers'>
+    <div className='headers'onMouseOver={handleCloseSubMenu}>
       <div className='slideshows'>
           <img className='silde-img' src={slides[index].image}/>
           <button className='pre-btn' onClick={handlePreImage}>

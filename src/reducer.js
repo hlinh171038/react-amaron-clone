@@ -43,6 +43,8 @@ const reducer =(state,action)=>{
             return {...state,checkoutArr:state.checkoutArr.filter(item=>item.id!==action.payload)}
         case "REMOVE__ALL":
             return {...state,checkoutArr:[]}
+        case "FILLTER__CATAGORY__PRODUCT":
+            return {...state,products:action.payload}
         default:
             return state;
     }

@@ -5,9 +5,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useGlobalContext } from '../context'
 
 function CheckoutLeft() {
-    const {state,handleIncrese,handleDecrese,handleDelete,handleRemoveAll} = useGlobalContext()
+    const {state,handleIncrese,handleDecrese,handleDelete,handleRemoveAll,closeSubmenu} = useGlobalContext()
+
+    const handleCloseSubMenu =()=>{
+        closeSubmenu()
+      }
   return (
-      <div className="checkout__left">
+      <div className="checkout__left" onMouseOver={handleCloseSubMenu}>
         {state.checkoutArr.map(item=>{
           const {id,image,title,price,rating,amount} = item
           return <div className='checkoutProduct'>
@@ -15,8 +19,9 @@ function CheckoutLeft() {
                     <div className='checkoutProduct__info'>
                         <p className='checkoutProduct__title'>{title}</p>
                         <p className="checkoutProduct__price">
-                            <small>$</small>
+                            
                             <strong>{price}</strong>
+                            <small>đ</small>
                         </p>
                         <div className="checkoutProduct__rating">
                             {Array(rating)

@@ -11,8 +11,8 @@ function Product({...product}) {
       <div className="product__info">
         <p>{title.substring(0,50)}...</p>
         <p className="product__price">
-          <small>$</small>
           <strong>{price}</strong>
+          <small>đ</small>
         </p>
         <div className="product__rating">
           {Array(rating)
